@@ -1,0 +1,139 @@
+//Crear un usuario
+###
+POST http://localhost:8000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Gize",
+    "app": "Martinez",
+    "apm": "Espinoza",
+    "telefono": 7712635896,
+    "email": "gize213@gmial.com",
+    "password": "123"
+}
+
+//Visualizar usuarios
+###
+GET http://localhost:8000/api/users HTTP/1.1
+
+//
+
+
+
+
+
+
+###
+POST http://localhost:8000/api/products HTTP/1.1
+Content-Type: application/json
+
+{
+    "NombreProducto": "Chocolate",
+    "descripción": "si te queda",
+    "precio": 15,
+    "cantidad": 5,
+    "imagen": "http://chocolateelreal.com/ropa/1.jpg"
+}
+
+
+
+
+
+
+
+###
+POST http://localhost:8000/api/Iot HTTP/1.1
+Content-Type: application/json
+
+{
+    "Tarjeta": "Tarjeta1",
+    "foco1": 0,
+    "foco2": 0,
+    "Temperatura": 12.5,
+    "Humedad": 25,
+    "peso": 15,
+    "motor": 0
+}
+
+###
+GET http://localhost:8000/api/iot HTTP/1.1
+
+
+
+###
+PUT  http://localhost:8000/api/iot/64151ef7d42291a023975a6f HTTP/1.1
+Content-Type: application/json
+
+{
+    "foco1": 1,
+    "foco2": 1,
+    "motor": 1
+}
+
+###
+DELETE http://localhost:8000/api/iot/64151ef7d42291a023975a6f HTTP/1.1
+
+
+
+
+
+###
+POST http://localhost:8000/api/venta HTTP/1.1
+Content-Type: application/json
+
+{
+    "cantidad":5,
+    "total":250,
+    "usuario":"641db916afd48bdaac0b9e78",
+    "producto":"64265e57e1c0b9a9670246d3"
+}
+
+###
+GET http://localhost:8000/api/venta HTTP/1.1
+
+###
+GET http://localhost:8000/api/venta/user/641db916afd48bdaac0b9e78 HTTP/1.1
+
+###
+PUT  http://localhost:8000/api/products/stock/64265e57e1c0b9a9670246d3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "Stock": "22"
+}
+
+//Categoria hombre
+###
+GET http://localhost:8000/api/products/categoria/hombre HTTP/1.1
+
+//Categoria hombre
+###
+GET http://localhost:8000/api/products/categoria/mujer HTTP/1.1
+
+//-----------------------------------------------------------------
+
+//tipo blusa de mujer
+###
+GET http://localhost:8000/api/products/tipo/blusa HTTP/1.1
+
+//tipo pantalon de mujer
+###
+GET http://localhost:8000/api/products/tipo/pantalonM HTTP/1.1
+
+//tipo agrigo de mujer
+###
+GET http://localhost:8000/api/products/tipo/agrigoM HTTP/1.1
+
+//---------------------------------------------------------------
+
+//tipo playera hombre
+###
+GET http://localhost:8000/api/products/tipo/playera HTTP/1.1
+
+//tipo pantalon de hombre
+###
+GET http://localhost:8000/api/products/tipo/pantalonH HTTP/1.1
+
+//tipo agrigo de hombre
+###
+GET http://localhost:8000/api/products/tipo/agrigoH HTTP/1.1
