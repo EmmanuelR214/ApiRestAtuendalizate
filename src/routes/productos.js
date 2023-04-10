@@ -79,6 +79,16 @@ router.get("/products/tipo/agrigoH", async (req, res) => {
   }
 });
 
+// update a productos
+router.put("/products/stock/:id", (req, res) => {
+  const { id } = req.params;
+  const {Stock} = req.body;
+  userSchema
+    .updateOne({ _id: id }, { $set: {Stock}})
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
 module.exports = router;
 
 /*
